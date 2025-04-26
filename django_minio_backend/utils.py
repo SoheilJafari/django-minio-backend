@@ -2,6 +2,7 @@
 import urllib3
 from typing import Union, List
 from django.conf import settings
+from urllib3.response import HTTPResponse
 
 
 __all__ = ['MinioServerStatus', 'PrivatePublicMixedError', 'ConfigurationError', 'get_setting', ]
@@ -19,7 +20,7 @@ class MinioServerStatus:
             print("OK")
         ```
     """
-    def __init__(self, request: Union[urllib3.response.BaseHTTPResponse, None]):
+    def __init__(self, request: Union[HTTPResponse, None]):
         self._request = request
         self._bool = False
         self._details: List[str] = []
