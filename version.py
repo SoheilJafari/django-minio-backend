@@ -90,7 +90,7 @@ def write_release_version(version):
 
 
 def get_git_version():
-    return "1.0.0"
+    return "1.0.1"
 
 
 if __name__ == "__main__":
